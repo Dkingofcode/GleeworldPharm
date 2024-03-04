@@ -1,0 +1,73 @@
+.main{
+    background-color: #FFAF70;
+    align-items: center;
+    place-items: center;
+    width: 35vh;
+    height: 100vh;
+    padding: 10px 20px;
+}
+
+
+.Applogo{
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 0px;
+}
+
+.links{
+
+
+}
+
+.links .select{
+   text-decoration: none;
+   color: #000040; 
+   display: flex;
+   padding: 10px 0px;
+   display: flex;
+   gap: 14px;
+   align-items: center;
+      
+}
+
+.links .select h4{
+    font-weight: 100;
+    font-size: 13px;
+}
+
+.links .select:hover {
+    background-color: #af5a19;
+}
+
+.links .select img{
+  width: 20px;
+}
+
+.links h6{
+   padding-bottom: 20px; 
+   font-weight: 100;
+   padding-top: 20px;
+}
+
+.links div{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,114 @@
+.header{    
+    padding: 0px 50px;
+}
+
+.Stats{
+    display: flex;
+    gap: 30px;
+    padding: 0px 0px;
+}
+
+.table{
+    border: 1px solid grey;
+    padding: 10px 50px;
+    
+}
+
+.table .tableheader{
+   display: flex;
+   justify-content: space-between;
+}
+
+.table .tableheader .tableButtons{
+    display: flex;   
+}
+
+.table .tableheader .tableButtons .filterbtn {
+   border: 3px solid;
+   display: flex;
+   gap: 10px;
+}
+
+.table .tableheader .tableButtons .deletebtn {
+  color: #000040;
+  border: 3px solid red;
+  background-color: red;
+  gap: 10px;
+  display: flex;
+}
+
+.table  .tableList{
+ display: block;
+ padding: 10px 0px;
+}
+
+.table .tableList div:first-child{
+   display: block;      
+}
+
+
+
+
+.table .tableList div{
+    border-bottom: 1px solid gray; 
+    display: block;
+    
+
+}
+
+
+
+
+
+.table .tableList div img {
+    width: 30px;
+    
+
+}
+
+.table .tableList div h5{
+    font-weight: 100;
+}
+
+.searchtable{
+    border-radius: 5px;
+    padding: 2px 5px;
+     display: flex;
+     background-color: #F3E3E2;
+    align-items: center;
+}
+
+.searchtable > img{
+    font-size: 3px;
+    width: 22px;
+    padding-bottom: 0px;
+    padding-right: 4px;
+    padding-left: 2px;
+}
+
+.searchtable input {
+   padding-top: 0px;
+   align-items: center;
+   padding-bottom: 0px;
+   font-size: 15px;
+   width: 250px; 
+   color: #000040;
+   background-color: #F3E3E2;
+   border: none;
+}
+
+.search input::placeholder{
+   margin-bottom: 14px;
+}
+
+/* 
+.table .tableList div h5{
+    font-weight: 100;
+}
+
+
+.table  .tableList{
+    display: block;
+    padding: 10px 0px;
+   }
+    */

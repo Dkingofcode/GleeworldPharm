@@ -1,0 +1,87 @@
+.texthead {
+    padding: 10px 30px;
+    font-size: 18px;
+}
+
+.textsubhead {    
+    padding: 5px 30px;
+    font-size: 14px;
+}
+
+
+.Controls{
+    display: flex;    
+    justify-content: space-between;
+    padding: 10px 30px;
+}
+
+
+.InventoryList {
+    padding: 20px 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    row-gap: 20px;
+    column-gap: 20px;
+}
+
+.InventoryList article{
+   border: 1px solid #FDF6ED;
+   display: flex;
+   flex-direction: column;
+   padding: 18px 15px;
+   border-radius: 5px;
+   background-color: #FDF6ED;
+   box-shadow: 0 2px 2px 0 rgb(224, 224, 224);
+}
+
+.searchtable{
+    padding: 4px;
+    border: 7px solid #F3E3E2;
+    /* border-radius: 5px;
+    padding: 5px 5px;
+     display: flex;
+     background-color: #F3E3E2;
+    align-items: center; */
+}
+
+.searchtable > img{
+    font-size: 3px;
+    width: 22px;
+    
+}
+
+.searchtable input {
+   align-items: center;
+   font-size: 19px;
+   width: 250px; 
+   color: #000040;
+   background-color: #F3E3E2;
+   border: none;
+
+}
+
+.search input::placeholder{
+   margin-bottom: 14px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

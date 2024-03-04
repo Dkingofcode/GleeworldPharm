@@ -1,0 +1,127 @@
+.Admin{
+    
+}
+
+
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px 10px 0px;
+}
+
+.header div h1{
+   font-size: 18px;
+   padding: 10px 0px;
+}
+
+.header div p{
+    font-size: 12px;
+    padding-bottom: 20px;
+    color: #000040;
+}
+
+.header button{
+    background-color: #000040;
+    color: white;
+    padding: 10px 23px;
+    margin: auto 0;
+    border-radius: 5px;
+    
+}
+
+.table{
+    border: 1px solid rgb(223, 213, 213);
+    padding: 10px 10px 0px 10px;
+    margin: 0px 20px 0px 0px;    
+    border-radius: 2px;
+}
+
+.table .tableheader{
+   display: flex;
+   justify-content: space-between;
+}
+
+.table .tableheader .tableButtons{
+    display: flex;   
+    gap: 10px;
+}
+
+.table .tableheader .tableButtons div{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+
+}
+
+.table .tableheader .tableButtons .filter{
+    border: 1px solid;
+}
+
+
+
+.table .tableheader .tableButtons .delete {
+    background-color: #FF0000;
+    color: #F3E3E2;
+}
+
+.table  .tableList{
+ display: flex;
+ flex-direction: column;
+ gap: 15px;
+ padding: 10px 0px;
+}
+
+.table .tableList div:first-child{
+    display: grid;
+    column-gap: 0px;  
+}
+
+
+.table .tableList div{
+    border-bottom: 1px solid gray;
+    display: grid;
+    padding: 10px 0px;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 33px;
+}
+
+.table .tableList div img {
+    width: 23px;
+    border: none;      
+}
+
+.searchtable{
+    border-radius: 5px;
+    padding: 2px 5px;
+     display: flex;
+     background-color: #F3E3E2;
+    align-items: center;
+}
+
+.searchtable > img{
+    font-size: 3px;
+    width: 22px;
+    padding-bottom: 0px;
+    padding-right: 4px;
+    padding-left: 2px;
+    border: none;
+}
+
+.searchtable input {
+   padding-top: 0px;
+   align-items: center;
+   padding-bottom: 0px;
+   font-size: 15px;
+   width: 250px; 
+   color: #000040;
+   background-color: #F3E3E2;
+   border: none;
+}
+
+.search input::placeholder{
+   margin-bottom: 14px;
+}
