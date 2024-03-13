@@ -21,9 +21,9 @@ function App() {
     <>
        
         <Router>    
-        <div style={{ display: 'grid', gridTemplateColumns: "250px 1fr", overflow: "hidden" }}>  
+        <div style={{ display: 'grid', gridTemplateColumns: "420px 1fr", overflow: "hidden" }}>  
          <Sidebar  />
-        <div className='page' style={{ padding: "15px 5px", maxHeight: "calc(100vh - 30px)"  }}>
+        <div className='page' style={{ padding: "15px 0px", maxHeight: "calc(100vh - 30px)"  }}>
         <Routes>
           <Route path='/dashboard' element={<Dashboard />} />
           <Route path='/pharmacies' element={<Pharmacies />} />

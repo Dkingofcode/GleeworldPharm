@@ -1,3 +1,5 @@
+
+
 import React from 'react';
 //import route from './route';
 import {Link} from "react-router-dom";
@@ -24,69 +26,78 @@ const Sidebar = () => {
       </div>
 
       <div className='links'>
-      <h6>GENERAL</h6>
+
+        <div className="general">
+        <h6>GENERAL</h6>
 
         
-      <Link  to="/dashboard" className='select'>
-       <img src={DashboardIcon} alt="dashboard" />
-        <h4>Dashboard</h4> 
-      </Link>
+<Link  to="/dashboard" className='select'>
+ <img src={DashboardIcon} alt="dashboard" />
+  <h4>Dashboard</h4> 
+</Link>
 
-      
-      <Link to="/pharmacies"  className='select'>
-       <img src={PharmacyIcon} alt="pharmacy" />
-        <h4>Pharmacies</h4> 
-      </Link>
 
-      
-      <Link to="/products"  className='select'>
-       <img src={ProductIcon} alt="products" />
-        <h4>Products</h4> 
-      </Link>
+<Link to="/pharmacies"  className='select'>
+ <img src={PharmacyIcon} alt="pharmacy" />
+  <h4>Pharmacies</h4> 
+</Link>
 
-      
-      <Link to="/inventory"  className='select'>
-       <img src={InventoryIcon} alt="inventory" />
-        <h4>Inventory</h4> 
-      </Link>
 
-      
-      <Link to="/customers"  className='select'>
-       <img src={CustomerIcon} alt="customers" />
-        <h4>Customers</h4> 
-      </Link>
+<Link to="/products"  className='select'>
+ <img src={ProductIcon} alt="products" />
+  <h4>Products</h4> 
+</Link>
 
-      
-      <Link to="/reviews"  className='select'>
-       <img src={ReviewsIcon} alt="reviews" />
-        <h4>Reviews</h4> 
-      </Link>
 
-      
-      <Link to="/purchase"  className='select'>
-       <img src={PurchaseIcon} alt="purchase" />
-        <h4>Purchase</h4> 
-      </Link>
+<Link to="/inventory"  className='select'>
+ <img src={InventoryIcon} alt="inventory" />
+  <h4>Inventory</h4> 
+</Link>
 
-      
-      <Link to="/admins"  className='select'>
-       <img src={Admins} alt="admins" />
-        <h4>Admins</h4> 
-      </Link>
 
-      <h6>ACCOUNT</h6>
+<Link to="/customers"  className='select'>
+ <img src={CustomerIcon} alt="customers" />
+  <h4>Customers</h4> 
+</Link>
+
+
+<Link to="/reviews"  className='select'>
+ <img src={ReviewsIcon} alt="reviews" />
+  <h4>Reviews</h4> 
+</Link>
+
+
+<Link to="/purchase"  className='select'>
+ <img src={PurchaseIcon} alt="purchase" />
+  <h4>Purchase</h4> 
+</Link>
+
+
+<Link to="/admins"  className='select'>
+ <img src={Admins} alt="admins" />
+  <h4>Admins</h4> 
+</Link>
+
+        </div>
+
+
+        
+   <div className="account">
+   <h6>ACCOUNT</h6>
 
        
-      <Link to="/settings"  className='select'>
-       <img src={SettingsIcon} alt="settings" />
-        <h4>Settings</h4> 
-      </Link>
-      
-      
-      <Link to="/help"  className='select'>
-       <img src={Helpicon} alt="help" />
-        <h4>Help</h4> 
-      </Link>
+<Link to="/settings"  className='select'>
+ <img src={SettingsIcon} alt="settings" />
+  <h4>Settings</h4> 
+</Link>
+
+
+<Link to="/help"  className='select'>
+ <img src={Helpicon} alt="help" />
+  <h4>Help</h4> 
+</Link>
+   </div>
+     
 
       </div>
 
@@ -95,3 +106,16 @@ const Sidebar = () => {
 }
 
 export default Sidebar;
+
+
+
+
+
+
+
+
+
+
+
+
+
