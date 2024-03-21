@@ -4,15 +4,19 @@ import BellIcon from '../assets/images/Bell.svg';
 import BoxIcon from '../assets/images/Messages.svg';
 import UserIcon from '../assets/images/Selfie.svg';
 import "./module.header.css";
+import Search from './SearchComponent/Search';
 
 const Header = () => {
   return (
     <div className='HeaderBox'>
       
-      <div className='search'>
+      {/* <div className='search'>
        <img src={SearchIcon} alt="Search"  />
       <input placeholder='Search ...' />
-      </div>
+      </div> */}
+      <Search text="Search..." 
+      marginLeft="30px"
+      />
 
       <div className='icons'>
       <div className='message'>

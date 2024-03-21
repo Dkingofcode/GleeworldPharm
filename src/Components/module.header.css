@@ -69,7 +69,7 @@ body{
     object-fit: contain; /* Preserve aspect ratio while covering the container */
 }
 
-.search{
+/* .search{
     border-radius: 5px;
     padding: 10px 5px;
     display: flex;
@@ -113,7 +113,7 @@ body{
    font-size: 13px;
   
    
-}
+} */
 
 
 

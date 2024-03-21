@@ -1,5 +1,5 @@
 .main-Box{
- 
+
 }
 .stake-container{
    
@@ -7,7 +7,8 @@
     align-items: center;
     justify-content: space-between;
  
-    width: 300px;
+
+width: 300px;
     padding: 25px
 }
 .stake-texts{

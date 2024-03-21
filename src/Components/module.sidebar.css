@@ -60,6 +60,22 @@ margin-top: 30px;
     border-radius: 5px;
 }
 
+.selected{
+    background-color: rgba(0, 0, 64, 0.15) ;
+    text-decoration: none;
+   color: #000040; 
+   display: flex;
+   padding: 10px 0px;
+   padding-left: 10px;
+   display: flex;
+   gap: 15px;
+ height: 60px;
+   align-items: center;
+
+  
+    border-radius: 5px;
+}
+
 .links .select img{
   width: 20px;
 }
