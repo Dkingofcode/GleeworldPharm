@@ -13,10 +13,23 @@ import './module.dashboard.css';
 import SearchIcon from '../assets/icons/Search.svg';
 
 const Dashboard = () => {
-   
-    const handleFilter = () => { 
+  
+  const url = 'staging.medfinder.com.ng/api/v1/admin';
+
+  const handleDashboard = () => {
+     const data =  fetch(url)
+     .then((res) => console.log(res))
+     .catch(err => console.log(err))      
+     
+     return data;
+    }
+
+
+  const handleFilter = () => { 
 
   }
+
+
 
   return (
     <div>

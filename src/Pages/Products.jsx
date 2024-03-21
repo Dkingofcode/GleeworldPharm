@@ -1,14 +1,27 @@
-import React from 'react';
+//import React from 'react';
 import Header from '../Components/header';
-import Sidebar from '../Components/Sidebar';
+//import Sidebar from '../Components/Sidebar';
 import SearchIcon from '../assets/icons/Search.svg';
 import './module.products.css';
 
 const Products = () => {
   
+  const url = 'staging.medfinder.com.ng/api/v1/admin';
+
+  const handleProducts = () => {
+     const data =  fetch(url)
+     .then((res) => console.log(res))
+     .catch(err => console.log(err))      
+     
+     return data;
+    }
+
+  
   const handleFilter = () => {
 
   }
+
+  
     return (
     <div>
         <Header  />

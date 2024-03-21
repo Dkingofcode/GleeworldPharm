@@ -1,6 +1,6 @@
-import React from 'react';
+//import React from 'react';
 import Header from '../Components/header';
-import Sidebar from '../Components/Sidebar';
+//import Sidebar from '../Components/Sidebar';
 import './module.settings.css';
 
 

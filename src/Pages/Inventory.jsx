@@ -1,11 +1,22 @@
-import React from 'react';
+//import React from 'react';
 import Header from '../Components/header';
-import Sidebar from '../Components/Sidebar';
+//import Sidebar from '../Components/Sidebar';
 import SearchIcon from '../assets/icons/Search.svg';
 import './module.inventory.css';
 
 
 const Inventory = () => {
+  const url = 'staging.medfinder.com.ng/api/v1/admin';
+
+  const handleInventory = () => {
+     const data =  fetch(url)
+     .then((res) => console.log(res))
+     .catch(err => console.log(err))      
+     
+     return data;
+    }
+
+  
   return (
     <div>
         <Header  />

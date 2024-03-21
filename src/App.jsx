@@ -1,11 +1,11 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import Sidebar from './Components/Sidebar'
+import { useState } from 'react';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
+import Sidebar from './Components/Sidebar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Products from './Pages/Products';
 import Inventory from './Pages/Inventory';
-import './App.css'
+import './App.css';
 import Dashboard from './Pages/Dashboard';
 import Customers from './Pages/Customers';
 import Pharmacies from './Pages/Pharmacies';
@@ -13,6 +13,8 @@ import Reviews from './Pages/Reviews';
 import Purchase from './Pages/Purchase';
 import Settings from './Pages/Settings';
 import Admins from './Pages/Admins';
+import Login from './Pages/Login';
+
 
 function App() {
   
@@ -25,6 +27,7 @@ function App() {
          <Sidebar  />
         <div className='page' style={{ padding: "15px 5px", maxHeight: "calc(100vh - 30px)"  }}>
         <Routes>
+           <Route path='/login' element={<Login />} />
           <Route path='/dashboard' element={<Dashboard />} />
           <Route path='/pharmacies' element={<Pharmacies />} />
           <Route path='/inventory' element={<Inventory />} />

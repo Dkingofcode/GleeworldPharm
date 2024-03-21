@@ -1,12 +1,23 @@
-import React from 'react';
+//import React from 'react';
 import Header from '../Components/header';
-import Sidebar from '../Components/Sidebar';
+//import Sidebar from '../Components/Sidebar';
 import './module.reviews.css';
 import SearchIcon from '../assets/icons/Search.svg';
 import ReviewImg from '../assets/images/reviewimg.svg';
 import Panadol from '../assets/images/Panadol.svg';
 
 const Reviews = () => {
+  const url = 'staging.medfinder.com.ng/api/v1/admin';
+
+  const handleReviews = () => {
+     const data =  fetch(url)
+     .then((res) => console.log(res))
+     .catch(err => console.log(err))      
+     
+     return data;
+    }
+
+  
   return (
     <div>
         <Header  />
