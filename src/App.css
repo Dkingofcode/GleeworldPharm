@@ -20,12 +20,13 @@ body{
 }
 
 
-
-
-
-
-
-
+.link{
+  
+  text-decoration: none;
+  font-style: none;
+  color: #000040;
+  cursor: pointer;
+}
 
 
 

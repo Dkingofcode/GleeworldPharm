@@ -4,14 +4,37 @@ import "./module.login.css"
 import Logo from '../../assets/images/Logo.svg'; 
 import InputComponent from '../../Components/AuthComponent/InputComponent';
 import { useState } from 'react';
+import { useLogin } from '../../hooks/useLogin';
+import { useNavigate } from 'react-router-dom'; 
 const Login = () => {
- 
   const [show , setshow] = useState(false)
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const {login ,error ,isLoading , loggedIn} =useLogin()
+  const navigate = useNavigate();
+  
+const handleLogin = async() =>{
+  console.log("login clicked")
+  console.log(`Email : ${email}  Password : ${password}`)
+ 
+   await login(email,password)
+
+
+if(error){
+  console.log(error)
+}
+
+}
+
+
   
   const showPassword = () => {
  setshow(!show)
   }
   return (
+    <>
+   
+   
    <div className="login-main-container">
     <div className="login-left-container">
       <div className="login-left">
@@ -29,9 +52,19 @@ const Login = () => {
 
 {/* inputs */}
 <div className="input-containers">
-<InputComponent placeholder={"Username"}/>
-<InputComponent placeholder={"Password"} show={show} showPassword={showPassword} />
+<InputComponent placeholder={"Email"}
+value={email}
+onchange={(e)=> setEmail(e.target.value)}
+/>
+<InputComponent placeholder={"Password"} show={show} showPassword={showPassword} 
+value={password}
+onchange={(e)=> setPassword(e.target.value)}
+/>
 </div>
+
+
+<div className="error-div">{error? error.message : ""}</div>
+
 
 {/* remember /forgot */}
 <div className="questions">
@@ -45,8 +78,11 @@ const Login = () => {
 </div>
 
 {/* login button */}
-<button className='login-button'>
-  Login
+<button className='login-button'
+disabled={isLoading}
+onClick={handleLogin}>
+ {isLoading ? 'logging In' : `login`}
+
 </button>
       </div>
     </div>
@@ -56,6 +92,8 @@ const Login = () => {
      </div>
     </div>
    </div>
+
+   </>
   )
 }
 

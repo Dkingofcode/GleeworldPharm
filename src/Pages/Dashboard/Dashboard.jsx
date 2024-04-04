@@ -15,7 +15,7 @@ import './module.dashboard.css';
 import { DashboardData } from '../TableData';
 import CashComponent from '../../Components/DashboardComponent/CashComponent';
 import StakeholderComponent from '../../Components/DashboardComponent/StakeholderComponent';
-
+import { DashboardCashData } from '../../Components/ComponentsData';
 import TableComponent from '../../Components/CommonTableComponent/TableComponent';
 
 const Dashboard = () => {
@@ -23,36 +23,18 @@ const Dashboard = () => {
   const {pathname} = useLocation();
   console.log(pathname)
 
+
   return (
     <div>
        <Header  />
 
        <section className='categories'>
       <div className="cash">
-      <CashComponent
-      topText="Total Cash Flow"
-      bottomText="200,000"
-      icon={NairaIcon}
-      cashImage={CashFlowicon}
-      />
-       <CashComponent
-         topText="Total Revenue"
-         bottomText="23"
+        <CashComponent Data={DashboardCashData}/>
+     
+
         
-         cashImage={revenue}
-       />
-       <CashComponent
-       topText="Total Cash Inflow"
-       bottomText="1002"
-      
-       cashImage={DownArrow}
-       />
-       <CashComponent
-       topText="Total Cash Outflow"
-       bottomText="32"
-      
-       cashImage={UpArrow}
-       />
+
       </div>
 
      <div className="stakeholder">

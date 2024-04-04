@@ -71,7 +71,12 @@ margin-bottom: 80px;
     justify-content: space-between;
     margin-top: 20px;
 }
-
+.error-div{
+    margin-top: 20px;
+    color: red;
+    font-style: italic;
+    font-size: 15px;
+}
 .remember{
   
     display: flex;
@@ -90,6 +95,7 @@ margin-bottom: 80px;
     background-color: #FFAF70;
     border-radius: 5px;
     margin-top: 80px;
+    cursor: pointer;
 }
 .login-right{
     display: flex;

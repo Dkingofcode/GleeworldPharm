@@ -127,7 +127,7 @@ padding: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-
+   gap: 15px;
 flex: 2;
 }
 
@@ -205,4 +205,19 @@ flex: 2;
 .tableheader .search img{
 
     width: 25px;
+}
+
+.complete{
+    
+   display: flex;
+   align-items: center;
+   width: 100%;
+
+}
+
+
+.linkTable{
+    width: 100%;
+    display: flex;
+    text-decoration: none;
 }

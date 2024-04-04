@@ -10,6 +10,17 @@ import SettingsIcon from '../assets/images/Settingsicon.svg';
 import Helpicon from '../assets/images/Helpicon.svg';
 import ReviewImg from '../assets/images/reviewimg.svg';
 import Panadol from '../assets/images/Panadol.svg';
+import CashFlowicon from "../assets/images/Cashflow.svg";
+import revenue from '../assets/images/newRevenue.svg';
+import DownArrow from '../assets/images/newArrowDown.svg';
+import UpArrow from '../assets/images/newArrowUp.svg';
+import NairaIcon from "../assets/images/naira.png";
+
+import received from '../assets/images/orderReceived.svg';
+import count from '../assets/images/orderCount.svg';
+import rejected from '../assets/images/orderRejected.svg';
+import accepted from '../assets/images/orderAccepted.svg';
+
 export const General = [
     { url: "/dashboard", img: DashboardIcon, text: "Dashboard" },
     { url: "/pharmacies", img: PharmacyIcon, text: "Pharmacies" },
@@ -133,3 +144,68 @@ export const General = [
     }
 
   ]
+
+
+
+  export const DashboardCashData = [
+
+   {
+    topText:"Total Cash Flow",
+    bottomText:"200,000",
+    icon:NairaIcon,
+    cashImage:CashFlowicon
+   },
+
+   {
+    topText:"Total Revenue",
+    bottomText:"23",
+   
+    cashImage:revenue
+   },
+
+   {
+    topText:"Total Cash Inflow",
+       bottomText:"1002",
+      
+       cashImage:DownArrow
+   },
+  {
+    topText:"Total Cash Outflow",
+    bottomText:"32",
+   
+    cashImage:UpArrow
+ 
+  }
+  ]
+
+
+  export const ViewPharmacyCashData = [
+
+    {
+     topText:"Total Order Received",
+     bottomText:"200",
+     
+     cashImage:received
+    },
+ 
+    {
+     topText:"Inventory Count",
+     bottomText:"134",
+    
+     cashImage:count
+    },
+ 
+    {
+     topText:"Order Accepted",
+        bottomText:"1002",
+       
+        cashImage:accepted
+    },
+   {
+     topText:"Order Rejected",
+     bottomText:"32",
+    
+     cashImage:rejected
+  
+   }
+   ]

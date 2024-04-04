@@ -7,7 +7,7 @@ import plusIcon from '../../assets/images/plusIcon.svg';
 import { useLocation } from 'react-router-dom';
 import TableComponent from '../../Components/CommonTableComponent/TableComponent';
 import BoxAndIcon from '../../Components/BoxAndIconComponent/BoxAndIcon';
-
+import { Link } from 'react-router-dom';
 const Admins = () => {
   const {pathname} = useLocation();
   console.log(pathname)
@@ -20,6 +20,7 @@ const Admins = () => {
       <p>Manage Admins added to manage your platform</p>
        </div>
 
+       <Link to="/admins/addadmin " className='link'>
        <BoxAndIcon
  
  text="Add Admin"
@@ -30,6 +31,10 @@ flexDirection="row-reverse"
 icon={plusIcon}
 color="white"
 />
+       
+       </Link>
+
+
        </div>
 
 <TableComponent pathname={pathname} placeholder="Search Admins ..."

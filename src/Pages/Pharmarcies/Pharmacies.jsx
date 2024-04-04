@@ -124,6 +124,8 @@ const Pharmacies = () => {
 pathname={pathname}
 placeholder="Search pharmacies..."
 Data={CustomerData}
+viewlink={true}
+viewPath="/pharmacies/viewpharmacy"
 />
     </div>
   )

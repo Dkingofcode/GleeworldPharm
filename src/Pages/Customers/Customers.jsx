@@ -27,7 +27,8 @@ const Customers = () => {
 
 
         <TableComponent pathname={pathname} placeholder="Search Customers ..." Data={CustomerData}
-     
+        viewlink={true}
+        viewPath={"/customers/viewcustomer"}
         />
 
     </div>
