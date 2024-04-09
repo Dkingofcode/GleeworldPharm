@@ -69,6 +69,13 @@ import Settings from './Pages/Settings/Settings';
 import { useLocation } from 'react-router-dom';
 import './App.css'
 import Login from './Pages/Login/Login';
+import Notifications from './Pages/Notifications/Notifications';
+import AddProduct from './Pages/Products/AddProduct/AddProduct';
+import EditProduct from './Pages/Products/EditProduct/EditProduct';
+import ViewPharmacy from './Pages/Pharmarcies/VeiwPharmacyPage/ViewPharmacy';
+import ViewCustomer from './Pages/Customers/ViewCustomer/ViewCustomer';
+import AddAdmin from './Pages/Admins/AddAdmin/AddAdmin';
+import { useAuthContext } from './hooks/useAuthContext';
 
 function App() {
   return (
@@ -79,28 +86,27 @@ function App() {
 }
 
 function AppContent() {
+  const { user } = useAuthContext();
   const navigate = useNavigate();
 const {pathname} = useLocation();
 
 const  [showside ,setShowSide] = useState(true);
 
-  useEffect(() => {
-   
-    if(pathname === "/"){
+useEffect(() => {
+ if(pathname === "/login"){
+  setShowSide(false)
+ }
+ if(!user && pathname !== "/login"){
+  navigate("/login")
+ }
+}, [pathname])
 
-      navigate('/dashboard')
-
-    }
-    if(pathname === "/login"){
-      setShowSide(false)
-    }
-  }, [navigate]);
 
   return (
     <>
-    
+
     <Routes>
-        <Route path='/login' element={<Login />} />  {/* Login route here */}
+        <Route path='/login' element={!user ? <Login /> : <Dashboard /> } />  {/* Login route here */}
       </Routes>
 
       {showside && (
@@ -108,7 +114,7 @@ const  [showside ,setShowSide] = useState(true);
    <Sidebar />
    <div className='page' style={{ padding: '15px 0px', maxHeight: 'calc(100vh - 30px)', width: '100%' }}>
      <Routes>
-       <Route path='/dashboard' element={<Dashboard />} />
+       <Route path='/dashboard' element={user ? <Dashboard /> : <Login />} />
        <Route path='/pharmacies' element={<Pharmacies />} />
        <Route path='/inventory' element={<Inventory />} />
        <Route path='/products' element={<Products />} />
@@ -117,7 +123,14 @@ const  [showside ,setShowSide] = useState(true);
        <Route path='/reviews' element={<Reviews />} />
        <Route path='/admins' element={<Admins />} />
        <Route path='/settings' element={<Settings />} />
+       <Route path='/notifications' element={<Notifications />} />
+       <Route path='/products/addproduct' element={<AddProduct />} />
+       <Route path='/products/editproduct/:id' element={<EditProduct />} />
+       <Route path='/pharmacies/viewpharmacy/:id' element={<ViewPharmacy />} />
+       <Route path='/customers/viewcustomer/:id' element={<ViewCustomer />} />
+       <Route path='/admins/addadmin' element={<AddAdmin />} />
      </Routes>
+   
    </div>
  </div>
 
@@ -128,3 +141,5 @@ const  [showside ,setShowSide] = useState(true);
 }
 
 export default App;
+
+

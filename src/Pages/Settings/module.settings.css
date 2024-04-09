@@ -1,127 +1,55 @@
-/* label{
-    color: rgb(192, 205, 206);
-} */
-
-.general{
-  padding-top: 10px;     
-  padding-bottom: 40px;    
-  display: flex;
-  flex-direction: column;    
-}
-
-.general h1{
-    padding-bottom: 10px;
-    font-size: 17px;
-}
-
-.general p {
-    margin-bottom: 30px;
-    font-size: 13px;
-}
-
-
-
-.general input {
-    border: 3px solid rgb(204, 202, 202);
-    background-color: rgb(204, 202, 202);
-    padding: 15px 74px;
-    border-radius: 3px;
-}
-
-.general button{
-    border: 1px solid #000040;
-    text-align: center;
-    margin-top: 10px;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 0 auto;
-    background-color: #000040;
-    color: antiquewhite;
-}
-
-.security {
-    padding-bottom: 40px;
-    display: flex;
-    flex-direction: column;
-    
-}
-
-.security h1{
-    padding-bottom: 10px;
-    font-size: 17px;
-}
-
-.security p{
-    margin-bottom: 30px;
-    font-size: 13px;  
-}
-
-.security input{
-    border: 3px solid rgb(204, 202, 202);
-    background-color: rgb(204, 202, 202);
-    padding: 15px 74px;
-    border-radius: 3px;
-}
-
-.security button{
-    border: 1px solid #000040;
-    text-align: center;
-    margin-top: 10px;
-    border-radius: 5px;
-    padding: 10px;
-    background-color: #000040;
-    margin: 0 auto;
-    color: antiquewhite;
-}
-
-.account{
+.settings-top{
    
-}
+    padding: 30px;
+  
 
-.account h1{
-    padding-bottom: 10px;
-    font-size: 17px;
 }
-
-.account p{
-    margin-bottom: 30px;
-    font-size: 13px;
-}
-
-.account div {
-    border: 1px solid rgb(192, 189, 189);
-    padding: 10px 14px;
-    margin: 10px 0px;
-    border-radius: 3px;
-}
-
-.form{
-    display: flex;
-    justify-content: flex-start;
-    gap: 3.7rem;
-    padding-bottom: 10px;
-    
-}
-
-.form div{
+.settings-text{
     display: flex;
     flex-direction: column;
+    gap: 15px;
+}
+.settings-text h1{
+    font-size: 22px;
+}
+.settings-text p{
+    font-size: 13px;
+}
+.settings-inputs{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+.button-div{
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 30px;
 
 }
-
-.form div label{
-   font-size: 13px;
-    color: rgb(192, 205, 206);
+.button{
+    background-color: #000040;
+    padding:15px 10px;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
-.form div input{
-
+.settings-actions{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
-
-/* font-family: Aptos;
-font-size: 24px;
-font-weight: 700;
-line-height: 34px;
-letter-spacing: 0em;
-text-align: left; */
-/* #000040 */
+.clear{
+    border:1px solid lightgray;
+    padding: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.clear p{
+    font-size: 13px;
+    color:#000040;
+    cursor: pointer;
+}

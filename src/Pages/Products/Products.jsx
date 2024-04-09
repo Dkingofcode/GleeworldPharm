@@ -6,6 +6,7 @@ import { useLocation } from 'react-router-dom';
 import TableComponent from '../../Components/CommonTableComponent/TableComponent';
 import BoxAndIcon from '../../Components/BoxAndIconComponent/BoxAndIcon';
 import plusIcon from '../../assets/images/plusIcon.svg';
+import { Link } from 'react-router-dom';
 const Products = () => {
   const {pathname} = useLocation();
   console.log(pathname)
@@ -30,6 +31,7 @@ const Products = () => {
    
 </div>
 
+<Link to="/products/addproduct" className='link'>
 <BoxAndIcon
  
  text="Add Product"
@@ -40,6 +42,7 @@ flexDirection="row-reverse"
 icon={plusIcon}
 color="white"
 />
+</Link>
        </div>
        
        
@@ -51,6 +54,8 @@ color="white"
  showlast={true}
  withImage ={true}
  Data={ProductsData}
+ Tablepath="/products/editproduct"
+ tablelink={true}
  />
 
 

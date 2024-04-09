@@ -15,17 +15,41 @@ import './module.dashboard.css';
 import { DashboardData } from '../TableData';
 import CashComponent from '../../Components/DashboardComponent/CashComponent';
 import StakeholderComponent from '../../Components/DashboardComponent/StakeholderComponent';
-
+import { DashboardCashData } from '../../Components/ComponentsData';
 import TableComponent from '../../Components/CommonTableComponent/TableComponent';
+import { useEffect, useState } from 'react';
 
 const Dashboard = () => {
-   
-  const {pathname} = useLocation();
-  console.log(pathname)
+   const [dashboardCount, setDashboardCount] = useState(null);
    const baseurl = 'staging.medfinder.com.ng';
    const dashboardurl = `${baseurl}/api/v1/admin/assets`;
-   const DashboardCount = fetch(dashboardurl).then(res => res.json).then(result => result.data)
-   .catch(err => {console.log(err)});
+  
+
+
+  const {pathname} = useLocation();
+  console.log(pathname);
+   
+  useEffect(() => {
+    const fetchDashboardData = async () => {
+      try {
+        const response = await fetch(dashboardurl);
+        if (!response.ok) {
+          throw new Error('Failed to fetch data');
+        }
+        const data = await response.json();
+        setDashboardCount(data.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchDashboardData();
+  }, []);
+
+
+  //  const DashboardCount = fetch(dashboardurl).then(res => res.json).then(result => result.data)
+  //  .catch(err => {console.log(err)});
+
 
 
   return (
@@ -34,56 +58,37 @@ const Dashboard = () => {
 
        <section className='categories'>
       <div className="cash">
-      <CashComponent
-      topText="Total Cash Flow"
-      bottomText="200,000"
-      icon={NairaIcon}
-      cashImage={CashFlowicon}
-      />
-       <CashComponent
-         topText="Total Revenue"
-         bottomText="23"
+        <CashComponent Data={DashboardCashData}/>
+     
+
         
-         cashImage={revenue}
-       />
-       <CashComponent
-       topText="Total Cash Inflow"
-       bottomText="1002"
-      
-       cashImage={DownArrow}
-       />
-       <CashComponent
-       topText="Total Cash Outflow"
-       bottomText="32"
-      
-       cashImage={UpArrow}
-       />
+
       </div>
 
      <div className="stakeholder">
      <StakeholderComponent
       color="#FDF6ED"
-      topText={DashboardCount.userCount}
+      topText={dashboardCount?.userCount || '-'}
       bottomText="Users"
       
       image={Consumers}
       />
     <StakeholderComponent
       color="#D6D6F6"
-      topText={DashboardCount.consumerCount}
+      topText={dashboardCount?.consumerCount || '-'}
       bottomText="Consumers"
       
       image={User}
       />
        <StakeholderComponent
       color="#E5F8ED"
-      topText={DashboardCount.agentCount}
+      topText={dashboardCount?.agentCount || '-'}
       bottomText="Agents"
       image={AgentIcon}
       />
        <StakeholderComponent
       color="#FCEAEA"
-      topText={DashboardCount.userCount}
+      topText={dashboardCount?.userCount || '-'}
       bottomText="Pharmacies"
       
       image={pharmacyIcon}

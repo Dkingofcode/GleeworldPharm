@@ -8,39 +8,27 @@ import SettingsIcon from "../assets/icons/Settings-2.svg";
 import { useLocation } from "react-router-dom";
 import "./module.header.css";
 import Search from './SearchComponent/Search';
-
+import user from "../assets/images/profileUser.svg"
+import settings from "../assets/images/profileSettings.svg"
+import logoutButton from "../assets/images/profileLogout.svg"
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useLogout } from '../hooks/useLogout';
+
+//import { useState } from 'react';
 
 const Header = () => {
-  const [state, setState] = useState("");
-  const location = useLocation();
+const {logout} = useLogout()
+  const [showAction , setShowAction] = useState(false)
 
-  const handleClick = () => {
-    console.log("Clicked");
-     setState(state === 'close' ? "" : "close");
-
+  const handleLogout = () =>{
+    logout();
   }
-
-  const handleProfile = () => {
-    location("/profile");
-  }
-
-  const handleSettings = () => {
-    location("/settings")
-  }
-
-  const handlelogout = () => {
-    location("/login")
-  }
-
 
   return (
     <div className='HeaderBox'>
       
-      {/* <div className='search'>
-       <img src={SearchIcon} alt="Search"  />
-      <input placeholder='Search ...' />
-      </div> */}
+     
       <Search text="Search..." 
       marginLeft="30px"
       />
@@ -51,23 +39,38 @@ const Header = () => {
         <img src={BoxIcon} alt='Message' />
       </div>
 
+      <Link to="/notifications">
       <div className='BellIcon'>
         <span>2</span>
         <img src={BellIcon} alt='Notification' />
       </div>
+      </Link>
 
-      <div onClick={handleClick} className='Profile'>
+      <div className='Profile' onClick={()=>{setShowAction(!showAction)}}>
         <img src={UserIcon} alt="Profile" />
+
       </div>
       
-      <ul className={`User__dropdown ${state}`}>
-      <a href='/profile'><img src={ProfileIcon}  alt='profile icon' />  My Profile</a>
-         <a href='/settings'><img src={SettingsIcon} alt='Settings icon' />Settings</a>
-         <a href='/login'><img src={ProfileIcon} alt='logout button'  />Logout</a>
-      </ul>
     </div>
+{showAction && (
 
-
+<div className="profile-options">
+<div className="my-profile">
+  <img src={user} alt="" />
+  <p>My Profile</p>
+</div>
+<div className="settings">
+  <img src={settings} alt="" />
+  <p>Settings</p>
+</div>
+<div className="logout"
+onClick={logout}
+>
+  <img src={logoutButton} alt="" />
+  <p style={{color:'red'}}>Logout</p>
+</div>
+</div>
+)}
     </div>
   )
 }

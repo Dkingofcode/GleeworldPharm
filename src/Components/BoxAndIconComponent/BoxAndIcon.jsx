@@ -1,7 +1,7 @@
 //import React from 'react'
 import "./module.boxandicon.css"
 
-const BoxAndIcon = ({icon ,bgColor,text,border,flexDirection,color}) => {
+const BoxAndIcon = ({icon ,bgColor,text,border,flexDirection,color,gap,fz}) => {
   return (
  <div className='box-and-icon-container' 
  style={{
@@ -10,14 +10,15 @@ const BoxAndIcon = ({icon ,bgColor,text,border,flexDirection,color}) => {
     border:`${border}`,
     flexDirection:`${flexDirection}`,
    padding:`10px 15px`,
-cursor:`pointer`
+cursor:`pointer`,
+gap:`${gap}`
 
 }}
  >
          <p className='' 
          style={{
             color:`${color}`,
-            fontSize:`15px`,
+            fontSize:`${fz}` ? `${fz}` : `15px`,
             cursor:`pointer`
             }}
          >{text}</p>

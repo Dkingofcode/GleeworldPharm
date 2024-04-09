@@ -1,7 +1,7 @@
 //import React from 'react';
 import Header from '../../Components/header';
 //import Sidebar from '../../Components/Sidebar';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './module.pharmacy.css';
 //import SearchIcon from '../../assets/icons/Search.svg';
 import TableComponent from '../../Components/CommonTableComponent/TableComponent';
@@ -10,9 +10,9 @@ import { useLocation } from 'react-router-dom';
 const Pharmacies = () => {
   
   const url = 'staging.medfinder.com.ng/api/v1/admin';
-
+  const pharmacyUrl = `${url}/pharmacies?page=1&verified=true&limit=10`
   const handlePharmacies = () => {
-     const data =  fetch(url)
+     const data =  fetch(pharmacyUrl)
      .then((res) => console.log(res))
      .catch(err => console.log(err))      
      
@@ -21,7 +21,30 @@ const Pharmacies = () => {
 
 
     const [pharmacies, setPharmacies] = useState();
-   
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+     useEffect(() => {
+      const fetchPharmacies = async() => {
+        try {
+          const response = await fetch('staging.medfinder.com.ng/api/v1/admin/pharmacies?page=1&verified=true&limit=10');
+          if (!response.ok) {
+            throw new Error('Failed to fetch data');
+          }
+          const data = await response.json();
+          setPharmacies(data.data);
+          setLoading(false);
+        } catch (error) {
+          setError(error.message);
+          setLoading(false);
+        }
+      };
+  
+      fetchPharmacies();
+      
+     }, []);
+
+
     if(pharmacies){
      setPharmacies(handlePharmacies)
     }
@@ -44,7 +67,7 @@ const Pharmacies = () => {
       </div>
       
 
-      {/* <div className='table'>
+       <div className='table'>
         <div className='tableheader'>
         <div className='searchtable'>
        <img src={SearchIcon} alt="Search"  />
@@ -78,7 +101,26 @@ const Pharmacies = () => {
             <h5>ACTION</h5>
             </div>
 
-            <div>
+           
+            {loading ? (
+        <p>Loading...</p>
+      ) : error ? (
+        <p>Error: {error}</p>
+      ) : (
+        <div>
+          {pharmacies.map((pharmacy) => (
+            <div key={pharmacy._id}>
+              <p>Name: {pharmacy.company_name}</p>
+              <p>Address: {pharmacy.address}</p>
+              <p>Email: {pharmacy.email}</p>
+              {/* Display other relevant information */}
+            </div>
+          ))}
+        </div>
+      )}
+  
+
+            {/* <div>
             <img src="" alt="" />
             <h5>Gleeworld Pharmacy</h5>
             <h5>Approved</h5>
@@ -138,13 +180,19 @@ const Pharmacies = () => {
             <h5>...</h5>
             </div>
         </div>
-        </div> */}
+        </div> */} 
+
+
 <TableComponent
 
 pathname={pathname}
 placeholder="Search pharmacies..."
 Data={CustomerData}
+viewlink={true}
+viewPath="/pharmacies/viewpharmacy"
 />
+    </div>
+    </div>
     </div>
   )
 }

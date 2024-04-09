@@ -10,8 +10,9 @@ import filterArrow from '../../assets/images/filterArrow.svg';
 import downloadIcon from '../../assets/images/downloadIcon.svg';
 import approved from "../../assets/images/approved.svg";
 import pending from "../../assets/images/pending.svg";
+import { Link } from 'react-router-dom';
 
-const TableComponent = ({pathname, topleftText, showlast, placeholder, Data, withImage}) => {
+const TableComponent = ({pathname, topleftText, showlast, placeholder, Data, withImage,Tablepath,tablelink,viewlink,viewPath}) => {
     console.log(Data);
     const [action, setAction] = useState(null);
     const [click, setClick] = useState(false);
@@ -82,14 +83,107 @@ const TableComponent = ({pathname, topleftText, showlast, placeholder, Data, wit
                     </div>
 
                     <div className="head-container">
-                        {/* Headers */}
+                    {pathname === "/dashboard" && (
+
+<div className="head-content">
+  <input  className="head-content-input" type="radio" name="" id="" />
+  <p className="head-product-name">PRODUCT NAME</p>
+  <p className="head-product-price">PRICE</p>
+  <p className="head-product-category">CATEGORY</p>
+  <p className="head-product-brand">BRAND NAME</p>
+  <p className="head-product-quantity">QUANTITY SOLD</p>
+  <p className="head-product-action">ACTION</p>
+</div>
+
+    )}
+    {pathname === "/pharmacies" && (
+
+<div className="head-content">
+  <input  className="head-content-input" type="radio" name="" id="" />
+  <p className="head-product-name">PHARMACY</p>
+  <p className="head-product-price">VERIFICATION</p>
+  <p className="head-product-category">ADDRESS</p>
+  <p className="head-product-brand">EMAIL</p>
+  <p className="head-product-quantity">STATUS</p>
+  <p className="head-product-action">ACTION</p>
+</div>
+
+    )}
+
+{pathname === "/products" && (
+
+<div className="head-content">
+  <input  className="head-content-input" type="radio" name="" id="" />
+  <p className="head-product-name">PRODUCT NAME</p>
+  <p className="head-product-price">PRICE</p>
+  <p className="head-product-category">CATEGORY</p>
+  <p className="head-product-brand">BRAND NAME</p>
+  <p className="head-product-quantity">QUANTITY</p>
+  <p className="head-product-action">CREATED</p>
+</div>
+
+    )}
+
+{pathname === "/admins" && (
+
+<div className="head-content">
+  <input  className="head-content-input" type="radio" name="" id="" />
+  <p className="head-product-name">ADMIN NAME</p>
+  <p className="head-product-price">DATE ADDED</p>
+  <p className="head-product-category">EMAIL</p>
+  <p className="head-product-brand">LAST LOGIN</p>
+  <p className="head-product-quantity">STATUS</p>
+  <p className="head-product-action">ACTION</p>
+</div>
+
+    )}
+
+{pathname === "/purchase" && (
+
+<div className="head-content">
+  <input  className="head-content-input" type="radio" name="" id="" />
+  <p className="head-product-name">PRODUCT NAME</p>
+  <p className="head-product-price">PRICE</p>
+  <p className="head-product-category">CATEGORY</p>
+  <p className="head-product-brand">BRAND NAME</p>
+  <p className="head-product-quantity">QUANTITY</p>
+  <p className="head-product-action">SUPPLIER NAME</p>
+</div>
+
+    )}
+
+
+{pathname === "/customers" && (
+
+<div className="head-content">
+  <input  className="head-content-input" type="radio" name="" id="" />
+  <p className="head-product-name">CUSTOMER NAME</p>
+  <p className="head-product-price">VERIFICATION</p>
+  <p className="head-product-category">ADDRESS</p>
+  <p className="head-product-brand">EMAIL</p>
+  <p className="head-product-quantity">STATUS</p>
+  <p className="head-product-action">ACTION</p>
+</div>
+
+    )}
+
+
                     </div>
 
                     <div className="body-container">
                         {Data.map((item, index) => (
+                           
                             <div key={index}>
                                 <div className={!withImage ? "body-content-padd body-content" : "body-content"}>
+
+                                
                                     <input type="radio" name="" id=""/>
+                                    
+                                    
+                                  
+                                  
+
+                                    <Link className='linkTable link'   to={ tablelink ? `${Tablepath}/${index}` : ``}>
                                     <div className="product-name-image">
                                         {withImage && (
                                             <img src={Panadol} alt=""/>
@@ -112,13 +206,24 @@ const TableComponent = ({pathname, topleftText, showlast, placeholder, Data, wit
                                     )}
                                     {action === index && click && (
                                         <div ref={actionsRef} className="actions-container">
-                                            <div className="action-top">View</div>
+                                            <Link to={viewlink ? `${viewPath}/${index}` : ``} className='link action-top'>
+                                            <div className="">View</div>
+                                            </Link>
+                                            
                                             <div className="action-mid">Share</div>
                                             <div className="action-bottom">Delete</div>
                                         </div>
                                     )}
+
+
+
+                                    
+                                    
+                                    </Link>
+
                                 </div>
                             </div>
+                       
                         ))}
                     </div>
                 </div>
