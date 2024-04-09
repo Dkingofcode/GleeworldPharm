@@ -3,6 +3,8 @@ import Header from '../Components/header';
 //import Sidebar from '../Components/Sidebar';
 import SearchIcon from '../assets/icons/Search.svg';
 import './module.products.css';
+import { useState } from 'react';
+
 
 const Products = () => {
   
@@ -16,6 +18,11 @@ const Products = () => {
      return data;
     }
 
+    const [products, setProducts] = useState();
+   
+    if(products){
+     setProducts(handleProducts);
+    }
   
   const handleFilter = () => {
 

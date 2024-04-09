@@ -1,9 +1,16 @@
 //import React from 'react';
-import Header from '../Components/header';
+import Header from '../../Components/header';
 //import Sidebar from '../Components/Sidebar';
-import SearchIcon from '../assets/icons/Search.svg';
+//import SearchIcon from '../assets/icons/Search.svg';
 import './module.inventory.css';
+//import React from 'react';
+//import Header from '../../Components/header';
 
+import './module.inventory.css';
+import Search from '../../Components/SearchComponent/Search';
+import filterIcon from "../../assets/images/FilterIcon.svg";
+import BoxAndIcon from '../../Components/BoxAndIconComponent/BoxAndIcon';
+import { useState } from 'react';
 
 const Inventory = () => {
   const url = 'staging.medfinder.com.ng/api/v1/admin';
@@ -16,24 +23,34 @@ const Inventory = () => {
      return data;
     }
 
-  
+    const [inventory, setInventory] = useState();
+
+    if(inventory){
+      setInventory(handleInventory);
+    }
+
   return (
+    
+    
+    
+    
+
     <div>
         <Header  />
-      <h1 className='texthead'>INVENTORY</h1>
+        <div className="mainText">
+        <h1 className='texthead'>INVENTORY</h1>
       <p className='textsubhead'>Manage your inventory</p>
 
+        </div>
+     
 
       <div className='Controls'>
-      <div className='searchtable'>
-       <img src={SearchIcon} alt="Search"  />
-        <input placeholder='Search Inventory...' />
-      </div>
-
-      <button>
-        Filter <img /> 
-      </button>
-
+     <Search text="Search Inventory ..."/>
+     <BoxAndIcon
+ icon={filterIcon}
+ text="Filter"
+border=".5px solid #000040"
+className="filter-box"/>
       </div>
 
       <div className='InventoryList'>

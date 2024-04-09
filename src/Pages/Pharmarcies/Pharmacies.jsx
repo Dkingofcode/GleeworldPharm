@@ -1,9 +1,12 @@
 //import React from 'react';
-import Header from '../Components/header';
-//import Sidebar from '../Components/Sidebar';
+import Header from '../../Components/header';
+//import Sidebar from '../../Components/Sidebar';
+import { useState } from 'react';
 import './module.pharmacy.css';
-import SearchIcon from '../assets/icons/Search.svg';
-
+//import SearchIcon from '../../assets/icons/Search.svg';
+import TableComponent from '../../Components/CommonTableComponent/TableComponent';
+import { CustomerData } from '../TableData';
+import { useLocation } from 'react-router-dom';
 const Pharmacies = () => {
   
   const url = 'staging.medfinder.com.ng/api/v1/admin';
@@ -17,19 +20,31 @@ const Pharmacies = () => {
     }
 
 
+    const [pharmacies, setPharmacies] = useState();
+   
+    if(pharmacies){
+     setPharmacies(handlePharmacies)
+    }
+
   
+  const {pathname} = useLocation();
   return (
     <div>
         <Header  />
-      <h1 className='header'>Pharmacies</h1>
-      <div className='Stats'>
+      <div className='pharm-header'>
+        <h1>
+          Pharmacies
+        </h1>
+        <div className='Stats'>
        <p>All(2032)</p> 
        <p>Verified(202)</p> 
        <p>Pending(1602)</p> 
        <p>Reacted(228)</p> 
       </div>
+      </div>
+      
 
-      <div className='table'>
+      {/* <div className='table'>
         <div className='tableheader'>
         <div className='searchtable'>
        <img src={SearchIcon} alt="Search"  />
@@ -123,8 +138,13 @@ const Pharmacies = () => {
             <h5>...</h5>
             </div>
         </div>
-        </div>
+        </div> */}
+<TableComponent
 
+pathname={pathname}
+placeholder="Search pharmacies..."
+Data={CustomerData}
+/>
     </div>
   )
 }

@@ -1,6 +1,6 @@
-import React from 'react';
+//import React from 'react';
 import Header from '../Components/header';
-import Sidebar from '../Components/Sidebar';
+//import Sidebar from '../Components/Sidebar';
 import CashFlowicon from "../assets/images/Cashflow.svg";
 import RevenueIcon from '../assets/images/Bicash.svg';
 import DownArrow from '../assets/images/Arrowdown.svg';
@@ -11,6 +11,9 @@ import AgentIcon from '../assets/images/Bank.svg';
 import pharmacyIcon from '../assets/images/Pharmarcystore.svg';
 import './module.dashboard.css';
 import SearchIcon from '../assets/icons/Search.svg';
+import { useState } from 'react';
+
+
 
 const Dashboard = () => {
   
@@ -24,6 +27,11 @@ const Dashboard = () => {
      return data;
     }
 
+    const [dashboard, setDashboard] = useState();
+   
+   if(dashboard){
+    setDashboard(handleDashboard);
+   }
 
   const handleFilter = () => { 
 

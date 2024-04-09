@@ -4,10 +4,17 @@ body{
 
 
 .HeaderBox {
-    border-bottom: 1px solid rgb(202, 200, 200); 
+   
     display: flex;
     justify-content: space-between;
     padding: 0px 30px 20px 0px;
+    margin-bottom: 20px;
+    width: 100%;
+    
+    
+    box-shadow: 1px 4px 5px -4px rgba(168,168,168,0.54);
+-webkit-box-shadow: 1px 4px 5px -4px rgba(168,168,168,0.54);
+-moz-box-shadow: 1px 4px 5px -4px rgba(168,168,168,0.54);
 }
 
 .icons{
@@ -18,55 +25,72 @@ body{
 
 .icons div{
    border-radius: 50%; 
-   background-color: #F3E3E2;
+  
    position: relative;
    height: 36px;
    width: 36px;
    align-items: center;
    display: flex;
    justify-content: center;
+   
 }
 
 .icons div span{
     position: absolute;
-    top: -10px;
+    top: -6px;
     background-color: #FFAF70;
-    left: 15px;
+    left: 30px;
     border-radius: 50%;
-    padding: 2px 5px;
+    padding: 2px 7px;
 }
-
-.icons .Profile{
-    display: flex;
-    justify-content: center;
-    background-position: contain;
-    content-visibility:auto ;
-}
-
-.icons .Profile img{
-    width: 35px;
-    height: 35px;
+.icons div.message,.BellIcon{
     
+    background-color: #FDF6ED;
+   padding: 25px;
 }
 
-.search{
-    border-radius: 5px;
-    padding: 2px 5px;
+
+.icons .Profile {
     display: flex;
-    background-color: #F3E3E2;
+    background-color: #FDF6ED;
+    justify-content: center;
+    align-items: center; /* Added to center the image vertically */
+    height: 36px;
+    width: 36px;
+   padding: 25px;
+    border-radius: 50%; /* Make the container circular */
+}
+
+.icons .Profile img {
+  height: 36px;
+  width: 36px;
+    border-radius: 50%; /* Ensure the image itself is also circular */
+   
+    object-fit: contain; /* Preserve aspect ratio while covering the container */
+}
+
+/* .search{
+    border-radius: 5px;
+    padding: 10px 5px;
+    display: flex;
+    background-color: #FDF6ED;
     align-items: center;
+    margin-left: 30px;
+    gap: 8px;
+    border: 1px solid #F3E3E2;
+    
 }
 
 .search > img{
     font-size: 3px;
-    width: 22px;
+    width: 30px;
     padding-bottom: 0px;
     padding-right: 4px;
     padding-left: 2px;
 }
 
 .search input {
-    background-color: #F3E3E2;
+   
    padding-top: 0px;
    align-items: center;
    padding-bottom: 0px;
@@ -74,13 +98,22 @@ body{
    width: 450px; 
    color: #000040;
    border: none;
+   display: flex;
+   align-items: center;
+   background-color: #FDF6ED;
 
+}
+.search input:focus {
+   
+    outline: none; 
 }
 
 .search input::placeholder{
-   margin-bottom: 14px;
-   background-color: #F3E3E2;
-}
+   margin-top:12px;
+   font-size: 13px;
+  
+   
+} */
 
 .Profile{
    position: relative; 

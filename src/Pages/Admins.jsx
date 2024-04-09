@@ -2,6 +2,7 @@
 import Header from '../Components/header';
 //import Sidebar from '../Components/Sidebar';
 import './module.admin.css';
+import { useState } from 'react';
 import SearchIcon from '../assets/icons/Search.svg';
 import Circle from '../assets/images/Circle.svg';
 import Filter from '../assets/images/Filter.svg';
@@ -17,6 +18,13 @@ const Admins = () => {
      
      return data;
     }
+
+    const [admins, setAdmins] = useState();
+   
+    if(admins){
+     setAdmins(handleAdmin)
+    }
+
 
 
   return (

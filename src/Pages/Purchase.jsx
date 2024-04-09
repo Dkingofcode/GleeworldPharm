@@ -3,7 +3,7 @@ import Header from '../Components/header';
 //import Sidebar from '../Components/Sidebar';
 import './module.purchase.css';
 import SearchIcon from '../assets/icons/Search.svg';
-
+import { useState } from 'react';
 
 const Purchase = () => {
   const url = 'staging.medfinder.com.ng/api/v1/admin';
@@ -16,6 +16,11 @@ const Purchase = () => {
      return data;
     }
 
+    const [purchase, setPurchase] = useState();
+   
+    if(purchase){
+     setPurchase(handlePurchase)
+    }
   
   
   

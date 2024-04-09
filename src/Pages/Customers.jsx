@@ -2,6 +2,7 @@
 import Header from '../Components/header';
 //import Sidebar from '../Components/Sidebar';
 import './module.customers.css';
+import { useState } from 'react';
 import SearchIcon from '../assets/icons/Search.svg';
 import Filter from '../assets/images/Filter.svg';
 import Delete from '../assets/images/Delete.svg';
@@ -19,6 +20,13 @@ const Customers = () => {
      
      return data;
     }
+
+    const [customers, setCustomers] = useState();
+   
+   if(customers){
+    setCustomers(handleCustomers);
+   }
+
 
 
   return (

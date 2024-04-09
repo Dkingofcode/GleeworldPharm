@@ -7,6 +7,7 @@ import UserIcon from '../assets/images/Selfie.svg';
 import SettingsIcon from "../assets/icons/Settings-2.svg";
 import { useLocation } from "react-router-dom";
 import "./module.header.css";
+import Search from './SearchComponent/Search';
 
 import { useState } from 'react';
 
@@ -36,10 +37,13 @@ const Header = () => {
   return (
     <div className='HeaderBox'>
       
-      <div className='search'>
+      {/* <div className='search'>
        <img src={SearchIcon} alt="Search"  />
       <input placeholder='Search ...' />
-      </div>
+      </div> */}
+      <Search text="Search..." 
+      marginLeft="30px"
+      />
 
       <div className='icons'>
       <div className='message'>
