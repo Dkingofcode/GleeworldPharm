@@ -1,13 +1,32 @@
-import React from 'react';
+//import React from 'react';
 import Header from '../Components/header';
-import Sidebar from '../Components/Sidebar';
+//import Sidebar from '../Components/Sidebar';
 import './module.admin.css';
+import { useState } from 'react';
 import SearchIcon from '../assets/icons/Search.svg';
 import Circle from '../assets/images/Circle.svg';
 import Filter from '../assets/images/Filter.svg';
 import Delete from '../assets/images/Delete.svg';
 
 const Admins = () => {
+  const url = 'staging.medfinder.com.ng/api/v1/admin';
+
+  const handleAdmin = () => {
+     const data =  fetch(url)
+     .then((res) => console.log(res))
+     .catch(err => console.log(err))      
+     
+     return data;
+    }
+
+    const [admins, setAdmins] = useState();
+   
+    if(admins){
+     setAdmins(handleAdmin)
+    }
+
+
+
   return (
     <div className='Admin'>
         <Header  />

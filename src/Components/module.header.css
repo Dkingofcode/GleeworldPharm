@@ -4,84 +4,130 @@ body{
 
 
 .HeaderBox {
-    border-bottom: 1px solid rgb(202, 200, 200); 
+   
     display: flex;
     justify-content: space-between;
     padding: 0px 30px 20px 0px;
+    margin-bottom: 20px;
+    width: 100%;
+    position: relative;
+    
+    
+    box-shadow: 1px 4px 5px -4px rgba(168,168,168,0.54);
+-webkit-box-shadow: 1px 4px 5px -4px rgba(168,168,168,0.54);
+-moz-box-shadow: 1px 4px 5px -4px rgba(168,168,168,0.54);
 }
 
 .icons{
    display: flex; 
    justify-content: space-evenly;
    gap: 50px;
+   
 }
 
 .icons div{
    border-radius: 50%; 
-   background-color: #F3E3E2;
+  
    position: relative;
    height: 36px;
    width: 36px;
    align-items: center;
    display: flex;
    justify-content: center;
+   cursor: pointer;
 }
 
 .icons div span{
     position: absolute;
-    top: -10px;
+    top: -6px;
     background-color: #FFAF70;
-    left: 15px;
+    left: 30px;
     border-radius: 50%;
-    padding: 2px 5px;
+    padding: 2px 7px;
 }
-
-.icons .Profile{
-    display: flex;
-    justify-content: center;
-    background-position: contain;
-    content-visibility:auto ;
-}
-
-.icons .Profile img{
-    width: 35px;
-    height: 35px;
+.icons div.message,.BellIcon{
     
+    background-color: #FDF6ED;
+   padding: 25px;
 }
 
-.search{
-    border-radius: 5px;
-    padding: 2px 5px;
+
+.icons .Profile {
     display: flex;
-    background-color: #F3E3E2;
-    align-items: center;
+    background-color: #FDF6ED;
+    justify-content: center;
+    align-items: center; /* Added to center the image vertically */
+    height: 36px;
+    width: 36px;
+   padding: 25px;
+    border-radius: 50%;
+    cursor: pointer; /* Make the container circular */
 }
 
-.search > img{
-    font-size: 3px;
-    width: 22px;
-    padding-bottom: 0px;
-    padding-right: 4px;
-    padding-left: 2px;
+.icons .Profile img {
+  height: 36px;
+  width: 36px;
+    border-radius: 50%; /* Ensure the image itself is also circular */
+   
+    object-fit: contain; /* Preserve aspect ratio while covering the container */
 }
 
-.search input {
-    background-color: #F3E3E2;
-   padding-top: 0px;
-   align-items: center;
-   padding-bottom: 0px;
-   font-size: 15px;
-   width: 450px; 
+.profile-options{
+    border: 1px solid lightgrey;
+    position: absolute;
+    right:  10px;
+    bottom: 0px;
+
+    height: max-content;
+    top: 50px;
+    display: flex;
+    flex-direction: column;
+  
+   
+} */
+
+.Profile{
+   position: relative; 
+}
+
+.User__dropdown{
+   border: 3px solid black;
+   position: absolute; 
+   right: 20px;
+   top: 50px;  
+   background-color: #ffffff;
+   padding: 6px 10px; 
+   list-style-type: none;
    color: #000040;
-   border: none;
+   border-radius: 5px;
+   
+}
+
+.User__dropdown a{
+   display: flex;
+   margin: 0 auto;
+   justify-content: space-evenly;
+   gap: 10px;
+
+   align-items: center; 
+}
+
+.User__dropdown a:nth-child(2){
+    margin: 0px;
+    padding-right: 13px;
 
 }
 
-.search input::placeholder{
-   margin-bottom: 14px;
-   background-color: #F3E3E2;
+.User__dropdown a:nth-child(3){
+    margin: 0px;
+    padding-right: 20px;
 }
 
+ .close{
+   display: none;
+   visibility: hidden;
+   background-color: #000040;
+ }
 
 
 
@@ -104,6 +150,17 @@ body{
 
 
 
-
-
-
+ 
+    
+.my-profile,.settings,.logout{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    cursor: pointer;
+    flex: 1;
+    padding: 10px;
+}
+.my-profile:hover,.settings:hover,.logout:hover{
+    background-color:rgb(241, 236, 236) ;
+}

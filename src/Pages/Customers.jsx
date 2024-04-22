@@ -1,7 +1,8 @@
-import React from 'react';
+//import React from 'react';
 import Header from '../Components/header';
-import Sidebar from '../Components/Sidebar';
+//import Sidebar from '../Components/Sidebar';
 import './module.customers.css';
+import { useState } from 'react';
 import SearchIcon from '../assets/icons/Search.svg';
 import Filter from '../assets/images/Filter.svg';
 import Delete from '../assets/images/Delete.svg';
@@ -9,6 +10,25 @@ import Circle from '../assets/images/Circle.svg';
 
 
 const Customers = () => {
+
+  const url = 'staging.medfinder.com.ng/api/v1/admin';
+
+  const handleCustomers = () => {
+     const data =  fetch(url)
+     .then((res) => console.log(res))
+     .catch(err => console.log(err))      
+     
+     return data;
+    }
+
+    const [customers, setCustomers] = useState();
+   
+   if(customers){
+    setCustomers(handleCustomers);
+   }
+
+
+
   return (
     <div>
         <Header  />

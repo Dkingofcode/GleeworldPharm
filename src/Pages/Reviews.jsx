@@ -1,12 +1,30 @@
-import React from 'react';
+//import React from 'react';
 import Header from '../Components/header';
-import Sidebar from '../Components/Sidebar';
+//import Sidebar from '../Components/Sidebar';
 import './module.reviews.css';
 import SearchIcon from '../assets/icons/Search.svg';
 import ReviewImg from '../assets/images/reviewimg.svg';
 import Panadol from '../assets/images/Panadol.svg';
+import { useState } from 'react';
 
 const Reviews = () => {
+  const url = 'staging.medfinder.com.ng/api/v1/admin';
+
+  const handleReviews = () => {
+     const data =  fetch(url)
+     .then((res) => console.log(res))
+     .catch(err => console.log(err))      
+     
+     return data;
+    }
+  
+   const [reviews, setReviews] = useState();
+   
+   if(reviews){
+    setReviews(handleReviews)
+   }
+
+  
   return (
     <div>
         <Header  />
@@ -56,9 +74,9 @@ const Reviews = () => {
               <p>Created 2020</p>  
             </div>
            </div>
-            <p>"Panadol is my go-to choice for swift pain and fever relief.
+            <p>Panadol is my go-to choice for swift pain and fever relief.
              Its reliable effectiveness and easy-to-use format makes it a staple in 
-             my medicine cabinet." 
+             my medicine cabinet. 
             </p>
           </main>  
         </article>
@@ -81,9 +99,9 @@ const Reviews = () => {
               <p>Created 2020</p>  
             </div>
            </div>
-            <p>"Panadol is my go-to choice for swift pain and fever relief.
+            <p>Panadol is my go-to choice for swift pain and fever relief.
              Its reliable effectiveness and easy-to-use format makes it a staple in 
-             my medicine cabinet." 
+             my medicine cabinet. 
             </p>
           </main>  
         </article>
@@ -107,9 +125,9 @@ const Reviews = () => {
               <p>Created 2020</p>  
             </div>
            </div>
-            <p>"Panadol is my go-to choice for swift pain and fever relief.
+            <p>Panadol is my go-to choice for swift pain and fever relief.
              Its reliable effectiveness and easy-to-use format makes it a staple in 
-             my medicine cabinet." 
+             my medicine cabinet. 
             </p>
           </main>  
         </article>
@@ -132,9 +150,9 @@ const Reviews = () => {
               <p>Created 2020</p>  
             </div>
            </div>
-            <p>"Panadol is my go-to choice for swift pain and fever relief.
+            <p>Panadol is my go-to choice for swift pain and fever relief.
              Its reliable effectiveness and easy-to-use format makes it a staple in 
-             my medicine cabinet." 
+             my medicine cabinet.
             </p>
           </main>  
         </article>
@@ -157,9 +175,9 @@ const Reviews = () => {
               <p>Created 2020</p>  
             </div>
            </div>
-            <p>"Panadol is my go-to choice for swift pain and fever relief.
+            <p>Panadol is my go-to choice for swift pain and fever relief.
              Its reliable effectiveness and easy-to-use format makes it a staple in 
-             my medicine cabinet." 
+             my medicine cabinet. 
             </p>
           </main>  
         </article>
@@ -182,9 +200,9 @@ const Reviews = () => {
               <p>Created 2020</p>  
             </div>
            </div>
-            <p>"Panadol is my go-to choice for swift pain and fever relief.
+            <p>Panadol is my go-to choice for swift pain and fever relief.
              Its reliable effectiveness and easy-to-use format makes it a staple in 
-             my medicine cabinet." 
+             my medicine cabinet. 
             </p>
           </main>  
         </article>

@@ -1,6 +1,6 @@
-import React from 'react';
+//import React from 'react';
 import Header from '../Components/header';
-import Sidebar from '../Components/Sidebar';
+//import Sidebar from '../Components/Sidebar';
 import CashFlowicon from "../assets/images/Cashflow.svg";
 import RevenueIcon from '../assets/images/Bicash.svg';
 import DownArrow from '../assets/images/Arrowdown.svg';
@@ -11,12 +11,33 @@ import AgentIcon from '../assets/images/Bank.svg';
 import pharmacyIcon from '../assets/images/Pharmarcystore.svg';
 import './module.dashboard.css';
 import SearchIcon from '../assets/icons/Search.svg';
+import { useState } from 'react';
+
+
 
 const Dashboard = () => {
+  
+  const url = 'staging.medfinder.com.ng/api/v1/admin';
+
+  const handleDashboard = () => {
+     const data =  fetch(url)
+     .then((res) => console.log(res))
+     .catch(err => console.log(err))      
+     
+     return data;
+    }
+
+    const [dashboard, setDashboard] = useState();
    
-    const handleFilter = () => { 
+   if(dashboard){
+    setDashboard(handleDashboard);
+   }
+
+  const handleFilter = () => { 
 
   }
+
+
 
   return (
     <div>
