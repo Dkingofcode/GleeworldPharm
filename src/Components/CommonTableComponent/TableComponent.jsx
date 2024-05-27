@@ -1,4 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
+/* eslint-disable react/prop-types */
+import  { useState, useEffect, useRef } from 'react';
 import "./module.tablecomponent.css"
 import Search from '../../Components/SearchComponent/Search';
 import BoxAndIcon from '../../Components/BoxAndIconComponent/BoxAndIcon';
@@ -6,7 +7,7 @@ import filterIcon from "../../assets/images/FilterIcon.svg";
 import deleteIcon from "../../assets/images/deleteIcon.svg";
 import Panadol from '../../assets/images/Panadol.svg';
 import filterArrow from '../../assets/images/filterArrow.svg';
-import SearchIcon from '../../assets/icons/Search.svg';
+
 import downloadIcon from '../../assets/images/downloadIcon.svg';
 import approved from "../../assets/images/approved.svg";
 import pending from "../../assets/images/pending.svg";
@@ -166,7 +167,19 @@ const TableComponent = ({pathname, topleftText, showlast, placeholder, Data, wit
 </div>
 
     )}
+{pathname === "/coupons" && (
 
+<div className="head-content">
+  <input  className="head-content-input" type="radio" name="" id="" />
+  <p className="head-product-name">ORGANIZATION</p>
+  <p className="head-product-price">NUMBER OF STAFFS</p>
+  <p className="head-product-category">USAGE DURATION</p>
+  <p className="head-product-brand">LAST USED</p>
+  <p className="head-product-quantity">STATUS</p>
+  <p className="head-product-action">ACTION</p>
+</div>
+
+    )}
 
                     </div>
 
@@ -188,25 +201,38 @@ const TableComponent = ({pathname, topleftText, showlast, placeholder, Data, wit
                                         {withImage && (
                                             <img src={Panadol} alt=""/>
                                         )}
+
+
                                         <p className="body-product-name">{item.col1}</p>
                                     </div>
+
                                     <p className="body-product-price">{item.col2}</p>
+
+
                                     <p className="body-product-category">{item.col3}</p>
+
+
                                     <p className="body-product-brand">{pathname === "/admins" ? item.col4 : item.col4}</p>
-                                    {pathname === "/customers" || pathname === "/admins" || pathname === "/pharmacies" ? (
-                                        <img src={item.col2 === "Approved" ? approved : pending} alt=""
+
+
+                                    {pathname === "/customers" || pathname === "/admins" || pathname === "/pharmacies" || pathname === "/coupons"  ? (
+                                        <img src={item.col5 === true ? approved : pending} alt=""
                                              className="body-status-img body-product-quantity "/>
                                     ) : (
                                         <p className="body-product-quantity">{item.col5}</p>
                                     )}
+
+
                                     {pathname === "/purchase" || pathname === "/products" ? (
                                         <p className={pathname === "/purchase" ? "body-product-action body-product-supplier" : "body-product-action"}>{item.col6}</p>
                                     ) : (
                                         <p onClick={() => actionClicked(index)} className="body-product-action">...</p>
                                     )}
+
+
                                     {action === index && click && (
                                         <div ref={actionsRef} className="actions-container">
-                                            <Link to={viewlink ? `${viewPath}/${index}` : ``} className='link action-top'>
+                                            <Link to={viewlink ? `${viewPath}/${item.id}` : ``} className='link action-top'>
                                             <div className="">View</div>
                                             </Link>
                                             
